@@ -59,7 +59,10 @@ private:
    Board board;
    
 public:
-   Game(){}
+   Game()
+   {
+	   cout << "Game created...";
+   }
    Game(AI& robotAI): robotAI(robotAI){}
    void play();
 
