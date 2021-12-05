@@ -22,7 +22,6 @@ private:
    vector<vector<char>> board;
    
 public:
-   Board(){}
    Board(int size):size(size),board(size,vector<char>(size,'+'))
    {
       line = "\\";                   // easier to follow paths
@@ -59,12 +58,11 @@ private:
    Board board;
    
 public:
-   Game()
+   Game(AI& robotAI): robotAI(robotAI)
    {
-	   cout << "Game created...";
+		cout << "\r\nGame created!\r\n\r\n";
    }
-   Game(AI& robotAI): robotAI(robotAI){}
-   void play();
+   void running();
 
 private:
    void setup();
@@ -91,7 +89,7 @@ int main()
    AI gameAI;
    Game hexGame(gameAI);
    srand(time(0));
-   hexGame.play();
+   hexGame.running();
    return 0; 
 }
 
@@ -271,7 +269,7 @@ void Board::printBoard()
 }
 
 // play function to handle subfunctions also lots of robot overlord stuff
-void Game::play()
+void Game::running()
 {
    cout<< "You wish to challenge a computer in Hex? Very well, Let's play!" 
        << endl << endl;
