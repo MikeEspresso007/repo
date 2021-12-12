@@ -1,16 +1,16 @@
-SOURCES = HexGame.cpp
-OBJECTS = HexGame.o
+SOURCES = hexgame.cpp
+OBJECTS = hexgame.o
 HEADERS = 
-EXEBIN  = HexGame
+EXEBIN  = hexgame
 
 
 all: $(EXEBIN)
 
 $(EXEBIN) : $(OBJECTS) $(HEADERS)
-	g++ -o $(EXEBIN) $(OBJECTS)
+	g++ -o $(EXEBIN) $(OBJECTS) 
 
 $(OBJECTS) : $(SOURCES) $(HEADERS)
-	g++ -c $(FLAGS) $(SOURCES)
+	g++ -c $(FLAGS) $(SOURCES) 
 
 clean :
 	rm -f $(EXEBIN) $(OBJECTS)
