@@ -1,0 +1,3 @@
+Dec 12 08:58:41 rio-dev-vm-h254825 [COURSE:1][ASSIGNMENT:1]:[9936]: Linux rio-dev-vm-h254825 4.15.0-38-generic #41-Ubuntu SMP Wed Oct 10 10:59:38 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Dec 12 08:58:41 rio-dev-vm-h254825 [COURSE:1][ASSIGNMENT:1]:[9936]: Hello World from Main!
+Dec 12 08:58:41 rio-dev-vm-h254825 [COURSE:1][ASSIGNMENT:1]:[9936]: Hello World from Thread!
