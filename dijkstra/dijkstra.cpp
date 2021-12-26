@@ -15,14 +15,14 @@ double prob() {
 }
 
 // class to create definition of graph
-class Graph{
+class GraphBase{
     int V;
 public:
     // use vector of vectors for adjacency list
     vector<vector<Pair>> adjList;
 
     // graph constructor
-    Graph(int vertices){
+    GraphBase(int vertices){
         V = vertices;
         adjList.resize(V);
     }
@@ -32,19 +32,22 @@ public:
         adjList[src].push_back(make_pair(target,weight));
         adjList[target].push_back(make_pair(src,weight));
     }
+
+
+    void printGraph(GraphBase const &graph, int N)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            // print all neighboring vertices of given vertex
+            for (Pair v : graph.adjList[i])
+                cout << "(from " << i << " to " << v.first <<
+                        "; length: " << v.second << ") ";
+            cout << endl;
+        }
+    }
 };
 
-void printGraph(Graph const &graph, int N)
-{
-	for (int i = 0; i < N; i++)
-	{
-		// print all neighboring vertices of given vertex
-		for (Pair v : graph.adjList[i])
-			cout << "(from " << i << " to " << v.first <<
-					"; length: " << v.second << ") ";
-		cout << endl;
-	}
-}
+
 
 
 int main()
@@ -52,7 +55,7 @@ int main()
     std::cout << std::setprecision(2) << std::fixed;
     // create graph with N nodes
     int N = 5;
-    Graph g(N);
+    GraphBase g(N);
     int edges = 0;
     // create edges in the graph (src, target, weight)
     // use monte carlo simulation to create edges and weights
@@ -74,7 +77,7 @@ int main()
         }
     }
     // print the graph
-    printGraph(g, N);
+    g.printGraph(g, N);
     cout << "edges: " << edges << " | " << "nodes: " << N << endl;
     return 0;
 }
