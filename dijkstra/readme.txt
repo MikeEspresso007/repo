@@ -1,0 +1,1 @@
+Navigate to the directory, then key "make; ./dijkstra" to run.
